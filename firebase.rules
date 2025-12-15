@@ -1,0 +1,106 @@
+{
+  "rules": {
+    "admins": {
+      ".read": "auth != null",
+      ".write": "auth.token.email === 'mainplatform.nexus@gmail.com'",
+      "$uid": {
+        ".validate": "newData.val() === true || newData.val() === false"
+      }
+    },
+    "movies": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "series": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "originals": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "music": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "animation": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "carousel": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "subscriptions": {
+      ".read": true,
+      "$uid": {
+        ".read": true,
+        ".write": "auth != null && (auth.token.email === 'mainplatform.nexus@gmail.com' || auth.uid === $uid)"
+      }
+    },
+    "watchHistory": {
+      ".read": "auth != null",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "continueWatching": {
+      ".read": "auth != null",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "wallet": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "balance": {
+        ".read": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'",
+        ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+      },
+      "transactions": {
+        ".read": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'",
+        ".write": "auth != null"
+      }
+    },
+    "users": {
+      ".read": true,
+      ".write": "auth != null",
+      "$uid": {
+        ".read": true,
+        ".write": "auth != null && (auth.token.email === 'mainplatform.nexus@gmail.com' || auth.uid === $uid)"
+      }
+    },
+    "blockedDevices": {
+      ".read": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'",
+      ".write": true
+    },
+    "downloadTokens": {
+      ".read": true,
+      ".write": true
+    },
+    "ads": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "liveTv": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "liveTV": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'"
+    },
+    "news": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email === 'mainplatform.nexus@gmail.com'",
+      "$newsId": {
+        "comments": {
+          ".read": true,
+          ".write": "auth != null"
+        }
+      }
+    }
+  }
+}

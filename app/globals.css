@@ -1,0 +1,242 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.537 0.194 254.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.737 0.165 292.755);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.613 0.227 14.04);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.537 0.194 254.885);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 1rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.537 0.194 254.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.537 0.194 254.885);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.537 0.194 254.885);
+  --google-blue: oklch(0.566 0.202 257.386);
+  --google-red: oklch(0.604 0.233 26.481);
+  --google-yellow: oklch(0.851 0.176 87.989);
+  --google-green: oklch(0.626 0.164 154.624);
+}
+
+.dark {
+  --background: oklch(0.246 0.088 257.386);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.286 0.098 257.386);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.286 0.098 257.386);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.566 0.202 257.386);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.366 0.118 257.386);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.366 0.118 257.386);
+  --muted-foreground: oklch(0.808 0 0);
+  --accent: oklch(0.604 0.233 26.481);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.604 0.233 26.481);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.366 0.118 257.386);
+  --input: oklch(0.366 0.118 257.386);
+  --ring: oklch(0.566 0.202 257.386);
+  --chart-1: oklch(0.566 0.202 257.386);
+  --chart-2: oklch(0.604 0.233 26.481);
+  --chart-3: oklch(0.851 0.176 87.989);
+  --chart-4: oklch(0.626 0.164 154.624);
+  --chart-5: oklch(0.696 0.17 162.48);
+  --sidebar: oklch(0.266 0.098 257.386);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.566 0.202 257.386);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.366 0.118 257.386);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.366 0.118 257.386);
+  --sidebar-ring: oklch(0.566 0.202 257.386);
+  --blue-primary: oklch(0.566 0.202 257.386);
+  --purple-accent: oklch(0.626 0.164 154.624);
+  --pink-accent: oklch(0.604 0.233 26.481);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-display: "-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue",
+    "Arial", "sans-serif";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-blue-primary: var(--blue-primary);
+  --color-purple-accent: var(--purple-accent);
+  --color-pink-accent: var(--pink-accent);
+  /* Added animation variables for smooth transitions */
+  --animation-duration: 300ms;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    /* Disable context menu and option button globally */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Disable right-click context menu on touch devices */
+    -webkit-touch-callout: none;
+  }
+  /* Allow text selection for important content */
+  p,
+  span,
+  a,
+  button {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+  }
+  /* Added smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Enhanced glassmorphism utilities with better visual effects */
+.glass {
+  @apply backdrop-blur-xl bg-white/30 border border-white/20 dark:bg-white/5 dark:border-white/10 shadow-xl;
+}
+
+.glass-card {
+  @apply backdrop-blur-2xl bg-white/40 border border-white/20 dark:bg-slate-900/40 dark:border-white/10 rounded-3xl shadow-2xl hover:shadow-2xl transition-all duration-300;
+}
+
+.glass-button {
+  @apply backdrop-blur-md bg-white/20 hover:bg-white/30 border border-white/30 dark:bg-white/10 dark:hover:bg-white/20 dark:border-white/20 rounded-2xl transition-all duration-300 hover:scale-105 active:scale-95;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+/* Added premium animation keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Added custom scrollbar for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-purple-600/30 hover:bg-purple-600/50 rounded-full;
+}
